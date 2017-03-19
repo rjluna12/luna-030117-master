@@ -9,17 +9,9 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(path.join(__dirname, 'public')));
 //express routes
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'views/app.html'));
+  res.sendFile(path.join(__dirname,'views/Season1.html'));
 });
-app.get('/about', function(req, res){
-  res.sendFile(path.join(__dirname, 'views/about.html'));
-});
-app.get('/calculator', function(req, res){
-  res.sendFile(path.join(__dirname, 'views/calculator.html'));
-});
-app.get('*', function(req, res){
-  res.status(404).sendFile(path.join(__dirname, 'views/404.html'));
-});
+
 //express server listen
 var server = app.listen(app.get('port'), function(){
   console.log('Server listening on port ',app.get('port'));
